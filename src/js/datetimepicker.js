@@ -240,7 +240,7 @@ angular.module('ui.bootstrap.datetimepicker', [])
           hour: function (unixDate) {
             var selectedDate = moment.utc(unixDate).hour(0).minute(0).second(0);
 
-            var activeFormat = scope.ngModel ? moment(scope.ngModel).format('YYYY-MM-DD H') : '';
+            var activeFormat = scope.ngModel ? moment(scope.ngModel).format('YYYY-MM-DD h') : '';
 
             var result = {
               'previousView': 'day',
@@ -257,8 +257,8 @@ angular.module('ui.bootstrap.datetimepicker', [])
               var hourMoment = moment.utc(selectedDate).add(i, 'hours');
               var dateValue = {
                 'date': hourMoment.valueOf(),
-                'display': hourMoment.format('H:00'),
-                'active': hourMoment.format('YYYY-MM-DD H') === activeFormat
+                'display': hourMoment.format('ha'),
+                'active': hourMoment.format('YYYY-MM-DD h') === activeFormat
               };
 
               result.dates.push(dateValue);
@@ -270,14 +270,14 @@ angular.module('ui.bootstrap.datetimepicker', [])
           minute: function (unixDate) {
             var selectedDate = moment.utc(unixDate).minute(0).second(0);
 
-            var activeFormat = scope.ngModel ? moment(scope.ngModel).format('YYYY-MM-DD H:mm') : '';
+            var activeFormat = scope.ngModel ? moment(scope.ngModel).format('YYYY-MM-DD h:mma') : '';
 
             var result = {
               'previousView': 'hour',
               'currentView': 'minute',
               'nextView': 'setTime',
               'currentDate': selectedDate.valueOf(),
-              'title': selectedDate.format('YYYY-MMM-DD H:mm'),
+              'title': selectedDate.format('YYYY-MMM-DD h:mma'),
               'leftDate': moment.utc(selectedDate).subtract(1, 'hours').valueOf(),
               'rightDate': moment.utc(selectedDate).add(1, 'hours').valueOf(),
               'dates': []
@@ -289,8 +289,8 @@ angular.module('ui.bootstrap.datetimepicker', [])
               var hourMoment = moment.utc(selectedDate).add(i * configuration.minuteStep, 'minute');
               var dateValue = {
                 'date': hourMoment.valueOf(),
-                'display': hourMoment.format('H:mm'),
-                'active': hourMoment.format('YYYY-MM-DD H:mm') === activeFormat
+                'display': hourMoment.format('h:mm'),
+                'active': hourMoment.format('YYYY-MM-DD h:mma') === activeFormat
               };
 
               result.dates.push(dateValue);

@@ -2,7 +2,7 @@
   "name": "angular-bootstrap-datetimepicker",
   "version": "0.2.4",
   "description": "This directive allows you to add a datetime-picker to your form.",
-  "author": "https://github.com/dalelotts/angular-bootstrap-datetimepicker/graphs/contributors",
+  "author": "https://github.com/MichiganLabs/angular-bootstrap-datetimepicker/graphs/contributors",
   "license": "MIT",
   "homepage": "http://dalelotts.github.io/angular-bootstrap-datetimepicker",
   "main": [
